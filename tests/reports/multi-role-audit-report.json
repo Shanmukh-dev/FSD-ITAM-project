@@ -1,0 +1,531 @@
+{
+  "startedAt": "2026-10-08T09:20:20.628Z",
+  "completedAt": "2026-10-08T09:22:16.334Z",
+  "totalSessions": 4,
+  "totalScreensAudited": 23,
+  "screenshots": [
+    {
+      "filename": "01_admin_dashboard.png",
+      "label": "[ADMIN] Admin Control Center",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\01_admin_dashboard.png"
+    },
+    {
+      "filename": "02_admin_assets_list.png",
+      "label": "[ADMIN] Asset Inventory Catalog",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\02_admin_assets_list.png"
+    },
+    {
+      "filename": "04_admin_requests_queue.png",
+      "label": "[ADMIN] Gear Requisition Queue",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\04_admin_requests_queue.png"
+    },
+    {
+      "filename": "05_admin_maintenance_bench.png",
+      "label": "[ADMIN] Diagnostic Service Bench",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\05_admin_maintenance_bench.png"
+    },
+    {
+      "filename": "06_admin_staff_directory.png",
+      "label": "[ADMIN] Staff Directory Management",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\06_admin_staff_directory.png"
+    },
+    {
+      "filename": "07_admin_departments.png",
+      "label": "[ADMIN] Department Cost Centers",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\07_admin_departments.png"
+    },
+    {
+      "filename": "08_admin_reports_analytics.png",
+      "label": "[ADMIN] Financial & Lifecycle Reports",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\08_admin_reports_analytics.png"
+    },
+    {
+      "filename": "09_admin_profile.png",
+      "label": "[ADMIN] Administrator Profile",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\09_admin_profile.png"
+    },
+    {
+      "filename": "10_manager_dashboard.png",
+      "label": "[ASSET_MANAGER] Fleet Hub & Financial Overview",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\10_manager_dashboard.png"
+    },
+    {
+      "filename": "11_manager_assets_catalog.png",
+      "label": "[ASSET_MANAGER] Enterprise Asset Catalog",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\11_manager_assets_catalog.png"
+    },
+    {
+      "filename": "12_manager_requests_approval.png",
+      "label": "[ASSET_MANAGER] Requisitions Approval Queue",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\12_manager_requests_approval.png"
+    },
+    {
+      "filename": "13_manager_maintenance_dispatch.png",
+      "label": "[ASSET_MANAGER] Maintenance Ticket Dispatch",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\13_manager_maintenance_dispatch.png"
+    },
+    {
+      "filename": "14_manager_financial_reports.png",
+      "label": "[ASSET_MANAGER] Valuation & Amortization Reports",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\14_manager_financial_reports.png"
+    },
+    {
+      "filename": "15_manager_profile.png",
+      "label": "[ASSET_MANAGER] Manager Account Profile",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\15_manager_profile.png"
+    },
+    {
+      "filename": "16_tech_dashboard.png",
+      "label": "[TECHNICIAN] Diagnostic Bench Queue Dashboard",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\16_tech_dashboard.png"
+    },
+    {
+      "filename": "17_tech_maintenance_workbench.png",
+      "label": "[TECHNICIAN] Repair & Work Order Queue",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\17_tech_maintenance_workbench.png"
+    },
+    {
+      "filename": "18_tech_hardware_specs.png",
+      "label": "[TECHNICIAN] Asset Technical Specifications",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\18_tech_hardware_specs.png"
+    },
+    {
+      "filename": "19_tech_profile.png",
+      "label": "[TECHNICIAN] Technician Account Profile",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\19_tech_profile.png"
+    },
+    {
+      "filename": "20_employee_dashboard.png",
+      "label": "[EMPLOYEE] Self-Service Gear Deck",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\20_employee_dashboard.png"
+    },
+    {
+      "filename": "21_employee_my_equipment.png",
+      "label": "[EMPLOYEE] My Custody Hardware",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\21_employee_my_equipment.png"
+    },
+    {
+      "filename": "22_employee_my_requests.png",
+      "label": "[EMPLOYEE] My Hardware Requisitions",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\22_employee_my_requests.png"
+    },
+    {
+      "filename": "23_employee_reported_issues.png",
+      "label": "[EMPLOYEE] My Defect Reports",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\23_employee_reported_issues.png"
+    },
+    {
+      "filename": "24_employee_profile.png",
+      "label": "[EMPLOYEE] Employee Account Profile",
+      "path": "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit\\24_employee_profile.png"
+    }
+  ],
+  "consoleErrors": [],
+  "networkFailures": [],
+  "roleAudits": [
+    {
+      "role": "ADMIN",
+      "label": "Master System Administrator",
+      "email": "eleanor.vance@enterprise.corp",
+      "loginSuccess": true,
+      "screens": [
+        {
+          "path": "/dashboard",
+          "name": "01_admin_dashboard",
+          "title": "Admin Control Center",
+          "h1": "Admin Dashboard",
+          "navDurationMs": 3339,
+          "domStats": {
+            "h1": "Admin Dashboard",
+            "cards": 52,
+            "tables": 0,
+            "buttons": 7,
+            "badges": 9,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/assets",
+          "name": "02_admin_assets_list",
+          "title": "Asset Inventory Catalog",
+          "h1": "Assets",
+          "navDurationMs": 2446,
+          "domStats": {
+            "h1": "Assets",
+            "cards": 41,
+            "tables": 1,
+            "buttons": 17,
+            "badges": 9,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/requests",
+          "name": "04_admin_requests_queue",
+          "title": "Gear Requisition Queue",
+          "h1": "Equipment Requests",
+          "navDurationMs": 2442,
+          "domStats": {
+            "h1": "Equipment Requests",
+            "cards": 41,
+            "tables": 1,
+            "buttons": 15,
+            "badges": 15,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/maintenance",
+          "name": "05_admin_maintenance_bench",
+          "title": "Diagnostic Service Bench",
+          "h1": "Maintenance & Repairs",
+          "navDurationMs": 2431,
+          "domStats": {
+            "h1": "Maintenance & Repairs",
+            "cards": 34,
+            "tables": 1,
+            "buttons": 14,
+            "badges": 9,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/users",
+          "name": "06_admin_staff_directory",
+          "title": "Staff Directory Management",
+          "h1": "Team Members",
+          "navDurationMs": 2678,
+          "domStats": {
+            "h1": "Team Members",
+            "cards": 152,
+            "tables": 1,
+            "buttons": 75,
+            "badges": 65,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/departments",
+          "name": "07_admin_departments",
+          "title": "Department Cost Centers",
+          "h1": "Departments",
+          "navDurationMs": 3026,
+          "domStats": {
+            "h1": "Departments",
+            "cards": 74,
+            "tables": 0,
+            "buttons": 19,
+            "badges": 2,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/reports",
+          "name": "08_admin_reports_analytics",
+          "title": "Financial & Lifecycle Reports",
+          "h1": "Reports & Analytics",
+          "navDurationMs": 3144,
+          "domStats": {
+            "h1": "Reports & Analytics",
+            "cards": 31,
+            "tables": 0,
+            "buttons": 12,
+            "badges": 7,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/profile",
+          "name": "09_admin_profile",
+          "title": "Administrator Profile",
+          "h1": "My Profile",
+          "navDurationMs": 2739,
+          "domStats": {
+            "h1": "My Profile",
+            "cards": 23,
+            "tables": 0,
+            "buttons": 8,
+            "badges": 4,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        }
+      ],
+      "metrics": {}
+    },
+    {
+      "role": "ASSET_MANAGER",
+      "label": "Fleet & Procurement Manager",
+      "email": "david.kim@enterprise.corp",
+      "loginSuccess": true,
+      "screens": [
+        {
+          "path": "/dashboard",
+          "name": "10_manager_dashboard",
+          "title": "Fleet Hub & Financial Overview",
+          "h1": "Asset Manager Dashboard",
+          "navDurationMs": 2415,
+          "domStats": {
+            "h1": "Asset Manager Dashboard",
+            "cards": 48,
+            "tables": 0,
+            "buttons": 9,
+            "badges": 4,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/assets",
+          "name": "11_manager_assets_catalog",
+          "title": "Enterprise Asset Catalog",
+          "h1": "Assets",
+          "navDurationMs": 2407,
+          "domStats": {
+            "h1": "Assets",
+            "cards": 40,
+            "tables": 1,
+            "buttons": 17,
+            "badges": 10,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/requests",
+          "name": "12_manager_requests_approval",
+          "title": "Requisitions Approval Queue",
+          "h1": "Equipment Requests",
+          "navDurationMs": 2445,
+          "domStats": {
+            "h1": "Equipment Requests",
+            "cards": 40,
+            "tables": 1,
+            "buttons": 15,
+            "badges": 16,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/maintenance",
+          "name": "13_manager_maintenance_dispatch",
+          "title": "Maintenance Ticket Dispatch",
+          "h1": "Maintenance & Repairs",
+          "navDurationMs": 2286,
+          "domStats": {
+            "h1": "Maintenance & Repairs",
+            "cards": 33,
+            "tables": 1,
+            "buttons": 14,
+            "badges": 10,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/reports",
+          "name": "14_manager_financial_reports",
+          "title": "Valuation & Amortization Reports",
+          "h1": "Reports & Analytics",
+          "navDurationMs": 2990,
+          "domStats": {
+            "h1": "Reports & Analytics",
+            "cards": 30,
+            "tables": 0,
+            "buttons": 12,
+            "badges": 8,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/profile",
+          "name": "15_manager_profile",
+          "title": "Manager Account Profile",
+          "h1": "My Profile",
+          "navDurationMs": 2590,
+          "domStats": {
+            "h1": "My Profile",
+            "cards": 22,
+            "tables": 0,
+            "buttons": 8,
+            "badges": 5,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        }
+      ],
+      "metrics": {}
+    },
+    {
+      "role": "TECHNICIAN",
+      "label": "Hardware & Diagnostic Technician",
+      "email": "benjamin.scott@enterprise.corp",
+      "loginSuccess": true,
+      "screens": [
+        {
+          "path": "/dashboard",
+          "name": "16_tech_dashboard",
+          "title": "Diagnostic Bench Queue Dashboard",
+          "h1": "Technician Dashboard",
+          "navDurationMs": 2296,
+          "domStats": {
+            "h1": "Technician Dashboard",
+            "cards": 27,
+            "tables": 0,
+            "buttons": 8,
+            "badges": 5,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/maintenance",
+          "name": "17_tech_maintenance_workbench",
+          "title": "Repair & Work Order Queue",
+          "h1": "Maintenance & Repairs",
+          "navDurationMs": 2326,
+          "domStats": {
+            "h1": "Maintenance & Repairs",
+            "cards": 31,
+            "tables": 1,
+            "buttons": 14,
+            "badges": 10,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/assets",
+          "name": "18_tech_hardware_specs",
+          "title": "Asset Technical Specifications",
+          "h1": "Assets",
+          "navDurationMs": 2424,
+          "domStats": {
+            "h1": "Assets",
+            "cards": 37,
+            "tables": 1,
+            "buttons": 16,
+            "badges": 10,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/profile",
+          "name": "19_tech_profile",
+          "title": "Technician Account Profile",
+          "h1": "My Profile",
+          "navDurationMs": 2443,
+          "domStats": {
+            "h1": "My Profile",
+            "cards": 20,
+            "tables": 0,
+            "buttons": 8,
+            "badges": 5,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        }
+      ],
+      "metrics": {}
+    },
+    {
+      "role": "EMPLOYEE",
+      "label": "End-User Staff / Requisitioner",
+      "email": "aaron.paulson@enterprise.corp",
+      "loginSuccess": true,
+      "screens": [
+        {
+          "path": "/dashboard",
+          "name": "20_employee_dashboard",
+          "title": "Self-Service Gear Deck",
+          "h1": "My Equipment",
+          "navDurationMs": 2768,
+          "domStats": {
+            "h1": "My Equipment",
+            "cards": 28,
+            "tables": 0,
+            "buttons": 10,
+            "badges": 4,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/assets",
+          "name": "21_employee_my_equipment",
+          "title": "My Custody Hardware",
+          "h1": "My Equipment",
+          "navDurationMs": 2875,
+          "domStats": {
+            "h1": "My Equipment",
+            "cards": 20,
+            "tables": 0,
+            "buttons": 7,
+            "badges": 2,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/requests",
+          "name": "22_employee_my_requests",
+          "title": "My Hardware Requisitions",
+          "h1": "Equipment Requests",
+          "navDurationMs": 2858,
+          "domStats": {
+            "h1": "Equipment Requests",
+            "cards": 29,
+            "tables": 0,
+            "buttons": 14,
+            "badges": 6,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/maintenance",
+          "name": "23_employee_reported_issues",
+          "title": "My Defect Reports",
+          "h1": "Maintenance & Repairs",
+          "navDurationMs": 2829,
+          "domStats": {
+            "h1": "Maintenance & Repairs",
+            "cards": 29,
+            "tables": 0,
+            "buttons": 14,
+            "badges": 6,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        },
+        {
+          "path": "/profile",
+          "name": "24_employee_profile",
+          "title": "Employee Account Profile",
+          "h1": "My Profile",
+          "navDurationMs": 2584,
+          "domStats": {
+            "h1": "My Profile",
+            "cards": 20,
+            "tables": 0,
+            "buttons": 8,
+            "badges": 4,
+            "emptyState": false
+          },
+          "status": "SUCCESS"
+        }
+      ],
+      "metrics": {}
+    }
+  ]
+}

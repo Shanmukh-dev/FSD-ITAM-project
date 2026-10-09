@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-10-08T15:37:33.257Z",
+  "durationSeconds": 6.19,
+  "summary": {
+    "requests": {
+      "total": 46,
+      "failed": 0
+    },
+    "assertions": {
+      "total": 47,
+      "passed": 47,
+      "failed": 0
+    }
+  },
+  "failures": []
+}

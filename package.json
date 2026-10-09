@@ -1,0 +1,16 @@
+{
+  "name": "itam-enterprise-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:api": "node tests/postman/run-postman.js",
+    "test:e2e": "node tests/e2e/run-e2e.js",
+    "test:all": "node tests/run-all-tests.js",
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev"
+  },
+  "keywords": ["itam", "asset-management", "mern", "postman", "puppeteer", "testing"],
+  "author": "ITAM Engineering",
+  "license": "ISC"
+}

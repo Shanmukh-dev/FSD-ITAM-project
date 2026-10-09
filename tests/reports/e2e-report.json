@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-10-08T15:39:40.485Z",
+  "durationSeconds": 68.61,
+  "success": true,
+  "testSteps": [
+    {
+      "name": "01_Admin_Authentication",
+      "status": "PASSED",
+      "timestamp": "2026-10-08T15:38:39.487Z",
+      "note": "Admin signed in successfully"
+    },
+    {
+      "name": "02_Dashboard_Metrics_View",
+      "status": "PASSED",
+      "timestamp": "2026-10-08T15:38:40.491Z",
+      "header": "Admin Dashboard",
+      "statCardsCount": 59
+    },
+    {
+      "name": "03_Departments_Management",
+      "status": "PASSED",
+      "timestamp": "2026-10-08T15:38:54.234Z",
+      "createdDepartment": "Core Platform Infrastructure 1791473912941"
+    },
+    {
+      "name": "04_Staff_Directory_Interaction",
+      "status": "PASSED",
+      "timestamp": "2026-10-08T15:39:06.463Z",
+      "provisionedEmail": "e2e_staff_1791473912941@enterprise.corp"
+    },
+    {
+      "name": "05_Asset_Registration",
+      "status": "PASSED",
+      "timestamp": "2026-10-08T15:39:20.687Z",
+      "registeredAssetTag": "PUP-912941"
+    },
+    {
+      "name": "06_Asset_Detail_And_Depreciation",
+      "status": "PASSED",
+      "timestamp": "2026-10-08T15:39:20.798Z",
+      "currentUrl": "http://localhost:5173/assets/6ac7b9272f53d05d90c61ce9"
+    },
+    {
+      "name": "07_Asset_Requisitions_Flow",
+      "status": "PASSED",
+      "timestamp": "2026-10-08T15:39:32.525Z"
+    },
+    {
+      "name": "08_Maintenance_Queue_View",
+      "status": "PASSED",
+      "timestamp": "2026-10-08T15:39:33.744Z"
+    },
+    {
+      "name": "09_Executive_Reports_Visualization",
+      "status": "PASSED",
+      "timestamp": "2026-10-08T15:39:36.317Z"
+    },
+    {
+      "name": "10_Profile_And_Notifications_Dropdown",
+      "status": "PASSED",
+      "timestamp": "2026-10-08T15:39:39.984Z"
+    }
+  ],
+  "consoleLogs": [],
+  "networkErrors": [],
+  "screenshots": [
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\01_dashboard.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\02_admin_dashboard.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\03_departments.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\04_users.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\05_asset_created.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\06_asset_detail.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\07_requests.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\08_maintenance.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\09_reports.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\10_profile_and_notifications.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\failure_screenshot.png"
+  ]
+}
