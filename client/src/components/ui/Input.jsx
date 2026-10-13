@@ -15,34 +15,34 @@ export const Input = ({
       {label && (
         <label
           htmlFor={id}
-          className="text-xs font-medium text-slate-700 dark:text-slate-300 flex justify-between tracking-wide"
+          className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 flex justify-between tracking-wide"
         >
           <span>{label}</span>
-          {helperText && <span className="text-slate-400 dark:text-slate-500 text-[11px]">{helperText}</span>}
+          {helperText && <span className="text-zinc-400 dark:text-zinc-500 text-[11px] font-normal">{helperText}</span>}
         </label>
       )}
       <div className="relative flex items-center w-full">
         {Icon && (
-          <div className="absolute left-3 text-slate-400 pointer-events-none flex items-center justify-center">
+          <div className="absolute left-3.5 text-zinc-400 pointer-events-none flex items-center justify-center">
             <Icon size={16} />
           </div>
         )}
         <input
           id={id}
           type={type}
-          className={`w-full bg-white dark:bg-[#070A12]/90 border ${
+          className={`w-full bg-white dark:bg-[#0E0E12] border ${
             error
-              ? 'border-rose-500 focus:border-rose-500'
-              : 'border-slate-300 dark:border-white/10 hover:border-slate-400 dark:hover:border-white/20 focus:border-indigo-600 dark:focus:border-indigo-500'
-          } text-slate-900 dark:text-slate-100 text-sm rounded-lg py-2 ${
-            Icon ? 'pl-9 pr-3.5' : 'px-3.5'
-          } placeholder-slate-400 dark:placeholder-slate-500 outline-none transition-all duration-150 focus:ring-1 ${
-            error ? 'focus:ring-rose-500' : 'focus:ring-indigo-500/30'
-          } disabled:opacity-50 disabled:bg-slate-100 dark:disabled:bg-slate-800 ${className}`}
+              ? 'border-zinc-500 focus:border-zinc-500'
+              : 'border-black/[0.1] dark:border-white/10 hover:border-[#B88728]/40 dark:hover:border-[#F1CB8D]/40 focus:border-[#B88728] dark:focus:border-[#F1CB8D]'
+          } text-zinc-900 dark:text-zinc-100 text-sm rounded-xl py-2.5 ${
+            Icon ? 'pl-10 pr-3.5' : 'px-3.5'
+          } placeholder-zinc-400 dark:placeholder-zinc-600 outline-none transition-all duration-150 focus:ring-2 ${
+            error ? 'focus:ring-zinc-400/20' : 'focus:ring-[#B88728]/20 dark:focus:ring-[#F1CB8D]/20'
+          } disabled:opacity-50 disabled:bg-zinc-100 dark:disabled:bg-zinc-900 shadow-xs ${className}`}
           {...props}
         />
       </div>
-      {error && <span className="text-xs text-rose-500 dark:text-rose-400 mt-0.5">{error}</span>}
+      {error && <span className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">{error}</span>}
     </div>
   );
 };
@@ -61,26 +61,26 @@ export const Select = ({
       {label && (
         <label
           htmlFor={id}
-          className="text-xs font-medium text-slate-700 dark:text-slate-300 flex justify-between tracking-wide"
+          className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 flex justify-between tracking-wide"
         >
           <span>{label}</span>
-          {helperText && <span className="text-slate-400 dark:text-slate-500 text-[11px]">{helperText}</span>}
+          {helperText && <span className="text-zinc-400 dark:text-zinc-500 text-[11px] font-normal">{helperText}</span>}
         </label>
       )}
       <select
         id={id}
-        className={`w-full bg-white dark:bg-[#070A12]/90 border ${
+        className={`w-full bg-white dark:bg-[#0E0E12] border ${
           error
-            ? 'border-rose-500 focus:border-rose-500'
-            : 'border-slate-300 dark:border-white/10 hover:border-slate-400 dark:hover:border-white/20 focus:border-indigo-600 dark:focus:border-indigo-500'
-        } text-slate-900 dark:text-slate-100 text-sm rounded-lg px-3.5 py-2 outline-none transition-all duration-150 focus:ring-1 ${
-          error ? 'focus:ring-rose-500' : 'focus:ring-indigo-500/30'
-        } disabled:opacity-50 disabled:bg-slate-100 dark:disabled:bg-slate-800 ${className}`}
+            ? 'border-zinc-500 focus:border-zinc-500'
+            : 'border-black/[0.1] dark:border-white/10 hover:border-[#B88728]/40 dark:hover:border-[#F1CB8D]/40 focus:border-[#B88728] dark:focus:border-[#F1CB8D]'
+        } text-zinc-900 dark:text-zinc-100 text-sm rounded-xl px-3.5 py-2.5 outline-none transition-all duration-150 focus:ring-2 ${
+          error ? 'focus:ring-zinc-400/20' : 'focus:ring-[#B88728]/20 dark:focus:ring-[#F1CB8D]/20'
+        } disabled:opacity-50 disabled:bg-zinc-100 dark:disabled:bg-zinc-900 shadow-xs ${className}`}
         {...props}
       >
         {children}
       </select>
-      {error && <span className="text-xs text-rose-500 dark:text-rose-400 mt-0.5">{error}</span>}
+      {error && <span className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">{error}</span>}
     </div>
   );
 };
@@ -99,25 +99,25 @@ export const Textarea = ({
       {label && (
         <label
           htmlFor={id}
-          className="text-xs font-medium text-slate-700 dark:text-slate-300 flex justify-between tracking-wide"
+          className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 flex justify-between tracking-wide"
         >
           <span>{label}</span>
-          {helperText && <span className="text-slate-400 dark:text-slate-500 text-[11px]">{helperText}</span>}
+          {helperText && <span className="text-zinc-400 dark:text-zinc-500 text-[11px] font-normal">{helperText}</span>}
         </label>
       )}
       <textarea
         id={id}
         rows={rows}
-        className={`w-full bg-white dark:bg-[#070A12]/90 border ${
+        className={`w-full bg-white dark:bg-[#0E0E12] border ${
           error
-            ? 'border-rose-500 focus:border-rose-500'
-            : 'border-slate-300 dark:border-white/10 hover:border-slate-400 dark:hover:border-white/20 focus:border-indigo-600 dark:focus:border-indigo-500'
-        } text-slate-900 dark:text-slate-100 text-sm rounded-lg p-3 placeholder-slate-400 dark:placeholder-slate-500 outline-none transition-all duration-150 focus:ring-1 ${
-          error ? 'focus:ring-rose-500' : 'focus:ring-indigo-500/30'
-        } disabled:opacity-50 disabled:bg-slate-100 dark:disabled:bg-slate-800 resize-y ${className}`}
+            ? 'border-zinc-500 focus:border-zinc-500'
+            : 'border-black/[0.1] dark:border-white/10 hover:border-[#B88728]/40 dark:hover:border-[#F1CB8D]/40 focus:border-[#B88728] dark:focus:border-[#F1CB8D]'
+        } text-zinc-900 dark:text-zinc-100 text-sm rounded-xl p-3 placeholder-zinc-400 dark:placeholder-zinc-600 outline-none transition-all duration-150 focus:ring-2 ${
+          error ? 'focus:ring-zinc-400/20' : 'focus:ring-[#B88728]/20 dark:focus:ring-[#F1CB8D]/20'
+        } disabled:opacity-50 disabled:bg-zinc-100 dark:disabled:bg-zinc-900 resize-y shadow-xs ${className}`}
         {...props}
       />
-      {error && <span className="text-xs text-rose-500 dark:text-rose-400 mt-0.5">{error}</span>}
+      {error && <span className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">{error}</span>}
     </div>
   );
 };

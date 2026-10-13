@@ -2,28 +2,28 @@ import React from 'react';
 
 const variants = {
   primary:
-    'bg-indigo-600 hover:bg-indigo-500 active:scale-[0.98] text-white shadow-xs border border-indigo-600 font-medium',
+    'bg-[#B88728] hover:bg-[#996E1D] text-white dark:bg-[#F1CB8D] dark:hover:bg-[#F8E0B9] dark:text-[#09090B] font-semibold shadow-xs dark:shadow-[0_0_15px_-2px_rgba(241,203,141,0.25)] border border-transparent active:scale-[0.98]',
   secondary:
-    'bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 dark:border-slate-700 active:scale-[0.98]',
+    'bg-black/[0.04] hover:bg-black/[0.08] text-zinc-800 border border-black/[0.08] dark:bg-white/[0.06] dark:hover:bg-white/[0.1] dark:text-zinc-200 dark:border-white/10 active:scale-[0.98]',
   outline:
-    'bg-transparent hover:bg-slate-100 text-slate-700 border border-slate-300 hover:border-indigo-500 dark:text-slate-300 dark:border-white/15 dark:hover:bg-white/[0.06] dark:hover:border-indigo-400 active:scale-[0.98]',
+    'bg-transparent hover:bg-black/[0.04] text-zinc-700 border border-black/[0.15] hover:border-[#B88728] dark:text-zinc-300 dark:border-white/15 dark:hover:bg-white/[0.06] dark:hover:border-[#F1CB8D] active:scale-[0.98]',
   ghost:
-    'bg-transparent hover:bg-slate-100 text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 dark:hover:bg-white/[0.06] active:scale-[0.98]',
+    'bg-transparent hover:bg-black/[0.04] text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 dark:hover:bg-white/[0.06] active:scale-[0.98]',
   danger:
-    'bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 dark:bg-rose-500/15 dark:hover:bg-rose-500/25 dark:text-rose-300 dark:border-rose-500/30 active:scale-[0.98]',
+    'bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-200 dark:border-zinc-700 active:scale-[0.98]',
   warning:
-    'bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 dark:bg-amber-500/15 dark:hover:bg-amber-500/25 dark:text-amber-400 dark:border-amber-500/30 active:scale-[0.98]',
+    'bg-[#B88728]/15 hover:bg-[#B88728]/25 text-[#996E1D] border border-[#B88728]/30 dark:bg-[#F1CB8D]/15 dark:hover:bg-[#F1CB8D]/25 dark:text-[#F1CB8D] dark:border-[#F1CB8D]/30 active:scale-[0.98]',
   success:
-    'bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200 dark:bg-emerald-500/15 dark:hover:bg-emerald-500/25 dark:text-emerald-400 dark:border-emerald-500/30 active:scale-[0.98]',
+    'bg-[#B88728]/15 hover:bg-[#B88728]/25 text-[#996E1D] border border-[#B88728]/30 dark:bg-[#F1CB8D]/15 dark:hover:bg-[#F1CB8D]/25 dark:text-[#F1CB8D] dark:border-[#F1CB8D]/30 active:scale-[0.98]',
 };
 
 const sizes = {
-  xs: 'px-2 py-1 text-[11px] rounded-md',
-  sm: 'px-2.5 py-1.5 text-xs rounded-md font-medium',
-  md: 'px-3.5 py-2 text-xs sm:text-sm rounded-lg font-medium',
-  lg: 'px-5 py-2.5 text-sm sm:text-base rounded-lg font-semibold',
-  icon: 'p-2 rounded-lg',
-  iconSm: 'p-1.5 rounded-md',
+  xs: 'px-2 py-1 text-[11px] rounded-lg',
+  sm: 'px-2.5 py-1.5 text-xs rounded-xl font-medium',
+  md: 'px-3.5 py-2 text-xs sm:text-sm rounded-xl font-medium',
+  lg: 'px-5 py-2.5 text-sm sm:text-base rounded-2xl font-semibold',
+  icon: 'p-2 rounded-xl',
+  iconSm: 'p-1.5 rounded-lg',
 };
 
 export const Button = ({

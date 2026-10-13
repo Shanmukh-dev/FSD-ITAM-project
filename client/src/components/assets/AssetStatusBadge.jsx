@@ -6,13 +6,13 @@ export const AssetStatusBadge = ({ status, size = 'md' }) => {
   switch (status) {
     case ASSET_STATUS.AVAILABLE:
       return (
-        <Badge variant="success" size={size} dot>
+        <Badge variant="gold" size={size} dot>
           Available
         </Badge>
       );
     case ASSET_STATUS.ASSIGNED:
       return (
-        <Badge variant="primary" size={size} dot>
+        <Badge variant="info" size={size} dot>
           Assigned
         </Badge>
       );
@@ -24,7 +24,7 @@ export const AssetStatusBadge = ({ status, size = 'md' }) => {
       );
     case ASSET_STATUS.RETURNED:
       return (
-        <Badge variant="info" size={size} dot>
+        <Badge variant="default" size={size} dot>
           Returned
         </Badge>
       );

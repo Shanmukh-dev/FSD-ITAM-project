@@ -2,19 +2,21 @@ import React from 'react';
 
 const variants = {
   default:
-    'bg-slate-100 text-slate-800 border-slate-200 dark:bg-white/[0.08] dark:text-chalk dark:border-white/10',
+    'bg-black/[0.03] text-zinc-600 border-black/[0.06] dark:bg-white/[0.04] dark:text-zinc-300 dark:border-white/10',
   primary:
-    'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-500/15 dark:text-indigo-300 dark:border-indigo-500/30',
+    'bg-[#B88728]/12 text-[#996E1D] border-[#B88728]/25 dark:bg-[#F1CB8D]/15 dark:text-[#F1CB8D] dark:border-[#F1CB8D]/30 dark:shadow-[0_0_10px_-2px_rgba(241,203,141,0.25)]',
+  gold:
+    'bg-[#B88728]/12 text-[#996E1D] border-[#B88728]/25 dark:bg-[#F1CB8D]/15 dark:text-[#F1CB8D] dark:border-[#F1CB8D]/30 dark:shadow-[0_0_10px_-2px_rgba(241,203,141,0.25)]',
   success:
-    'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-500/15 dark:text-emerald-300 dark:border-emerald-500/30',
+    'bg-[#B88728]/12 text-[#996E1D] border-[#B88728]/25 dark:bg-[#F1CB8D]/15 dark:text-[#F1CB8D] dark:border-[#F1CB8D]/30 dark:shadow-[0_0_10px_-2px_rgba(241,203,141,0.25)]',
   warning:
-    'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-500/15 dark:text-amber-300 dark:border-amber-500/30',
+    'bg-black/[0.04] text-zinc-700 border-black/10 dark:bg-white/[0.06] dark:text-zinc-300 dark:border-white/10',
   danger:
-    'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-500/15 dark:text-rose-300 dark:border-rose-500/30',
+    'bg-black/[0.06] text-zinc-800 border-black/15 dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700',
   info:
-    'bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-500/15 dark:text-sky-300 dark:border-sky-500/30',
+    'bg-black/[0.04] text-zinc-900 border-black/10 dark:bg-white/[0.1] dark:text-[#F8FAFC] dark:border-white/20',
   muted:
-    'bg-slate-100 text-slate-500 border-slate-200 dark:bg-white/[0.04] dark:text-slate-400 dark:border-white/[0.06]',
+    'bg-black/[0.03] text-zinc-500 border-black/[0.06] dark:bg-white/[0.04] dark:text-zinc-400 dark:border-white/[0.06]',
 };
 
 export const Badge = ({
@@ -32,22 +34,18 @@ export const Badge = ({
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border tracking-wide ${
+      className={`inline-flex items-center gap-1.5 rounded-full border tracking-wide select-none ${
         variants[variant] || variants.default
       } ${sizeStyles[size] || sizeStyles.md} ${className}`}
     >
       {dot && (
         <span
           className={`w-1.5 h-1.5 rounded-full shrink-0 ${
-            variant === 'success'
-              ? 'bg-emerald-500 animate-pulse'
-              : variant === 'warning'
-              ? 'bg-amber-500'
-              : variant === 'danger'
-              ? 'bg-rose-500'
-              : variant === 'primary'
-              ? 'bg-indigo-600'
-              : 'bg-current'
+            variant === 'primary' || variant === 'gold' || variant === 'success'
+              ? 'bg-[#B88728] dark:bg-[#F1CB8D] animate-pulse'
+              : variant === 'info'
+              ? 'bg-zinc-800 dark:bg-white'
+              : 'bg-zinc-500 dark:bg-zinc-400'
           }`}
         />
       )}

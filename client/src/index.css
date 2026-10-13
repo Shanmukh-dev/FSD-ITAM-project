@@ -2,61 +2,67 @@
 @config "../tailwind.config.js";
 
 :root {
-  /* LIGHT MODE (Arctic Titanium & Slate) */
-  --bg-canvas: #F8FAFC;          /* slate-50 */
-  --bg-surface: #FFFFFF;         /* pure white */
+  /* LIGHT MODE (Monochromatic Near-White & Deep Gold) */
+  --bg-canvas: #FAFAFA;          /* clean near-white canvas */
+  --bg-surface: rgba(255, 255, 255, 0.85); /* frosted pure white */
   --bg-surface-elevated: #FFFFFF;
-  --bg-surface-sunken: #F1F5F9;   /* slate-100 */
-  --bg-surface-hover: #F8FAFC;    /* slate-50 */
-  --bg-sidebar: #FFFFFF;
+  --bg-surface-sunken: #F4F4F5;   /* zinc-100 */
+  --bg-surface-hover: rgba(0, 0, 0, 0.03);
+  --bg-sidebar: rgba(255, 255, 255, 0.90);
   --bg-header: rgba(255, 255, 255, 0.85);
 
-  --border-subtle: #E2E8F0;       /* slate-200 */
-  --border-strong: #CBD5E1;       /* slate-300 */
-  --border-focus: #6366F1;
+  --border-subtle: rgba(0, 0, 0, 0.08);       /* zinc-200 */
+  --border-strong: rgba(0, 0, 0, 0.16);       /* zinc-300 */
+  --border-focus: #B88728;
+  --border-gold: rgba(184, 135, 40, 0.35);
 
-  --text-primary: #0F172A;        /* slate-900 */
-  --text-secondary: #475569;      /* slate-600 */
-  --text-muted: #64748B;          /* slate-500 */
-  --text-faint: #94A3B8;          /* slate-400 */
+  --text-primary: #09090B;        /* deep obsidian black */
+  --text-secondary: #52525B;      /* zinc-600 */
+  --text-muted: #71717A;          /* zinc-500 */
+  --text-faint: #A1A1AA;          /* zinc-400 */
 
-  --primary: #4F46E5;             /* indigo-600 */
-  --primary-hover: #4338CA;       /* indigo-700 */
-  --primary-faint: #EEF2FF;       /* indigo-50 */
-  --primary-border: #C7D2FE;      /* indigo-200 */
+  --primary: #B88728;             /* deep accessible gold */
+  --primary-hover: #996E1D;       /* rich bronze gold */
+  --primary-faint: rgba(184, 135, 40, 0.08);
+  --primary-border: rgba(184, 135, 40, 0.30);
+  --primary-glow: 0 0 25px rgba(184, 135, 40, 0.15);
 
-  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
-  --shadow-elevated: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
-  --shadow-popover: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  --shadow-elevated: 0 10px 25px -4px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-popover: 0 20px 30px -5px rgba(0, 0, 0, 0.08);
+  --shadow-bento: 0 10px 35px -5px rgba(0, 0, 0, 0.06);
 }
 
 .dark {
-  /* DARK MODE (Obsidian Carbon & Slate) */
-  --bg-canvas: #0B0F17;          /* deep carbon */
-  --bg-surface: #111827;         /* slate-900 */
-  --bg-surface-elevated: #162032; /* slate-850 */
-  --bg-surface-sunken: #070A10;  /* deepest black */
-  --bg-surface-hover: #1E293B;   /* slate-800 */
-  --bg-sidebar: #0D131F;
-  --bg-header: rgba(11, 15, 23, 0.85);
+  /* DARK MODE (Obsidian Carbon & Champagne Gold #F1CB8D) */
+  --bg-canvas: #09090B;          /* deep obsidian carbon */
+  --bg-surface: rgba(18, 18, 22, 0.72); /* frosted acrylic dark glass */
+  --bg-surface-elevated: rgba(26, 26, 32, 0.88);
+  --bg-surface-sunken: #050507;
+  --bg-surface-hover: rgba(255, 255, 255, 0.05);
+  --bg-sidebar: rgba(14, 14, 18, 0.78);
+  --bg-header: rgba(9, 9, 11, 0.82);
 
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.15);
-  --border-focus: #818CF8;
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-focus: #F1CB8D;
+  --border-gold: rgba(241, 203, 141, 0.30);
 
-  --text-primary: #F8FAFC;        /* slate-50 */
-  --text-secondary: #CBD5E1;      /* slate-300 */
-  --text-muted: #94A3B8;          /* slate-400 */
-  --text-faint: #64748B;          /* slate-500 */
+  --text-primary: #F8FAFC;        /* titanium white */
+  --text-secondary: #A1A1AA;      /* zinc-400 */
+  --text-muted: #71717A;          /* zinc-500 */
+  --text-faint: #52525B;          /* zinc-600 */
 
-  --primary: #6366F1;             /* indigo-500 */
-  --primary-hover: #818CF8;       /* indigo-400 */
-  --primary-faint: rgba(99, 102, 241, 0.12);
-  --primary-border: rgba(99, 102, 241, 0.3);
+  --primary: #F1CB8D;             /* Champagne Gold */
+  --primary-hover: #F8E0B9;       /* Luminous Gold */
+  --primary-faint: rgba(241, 203, 141, 0.12);
+  --primary-border: rgba(241, 203, 141, 0.35);
+  --primary-glow: 0 0 25px rgba(241, 203, 141, 0.20);
 
-  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
-  --shadow-elevated: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
-  --shadow-popover: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --shadow-elevated: 0 12px 30px -6px rgba(0, 0, 0, 0.7), 0 8px 16px -4px rgba(0, 0, 0, 0.5);
+  --shadow-popover: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  --shadow-bento: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
 }
 
 body {
@@ -66,12 +72,42 @@ body {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::selection {
-  background-color: rgba(99, 102, 241, 0.35);
+  background-color: rgba(241, 203, 141, 0.35);
   color: #FFFFFF;
+}
+
+/* Glassmorphism & Bento Deck Utilities */
+.glass-panel {
+  background-color: var(--bg-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-window {
+  background-color: var(--bg-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1.75rem; /* rounded-3xl */
+  box-shadow: var(--shadow-bento);
+}
+
+.gold-glow {
+  box-shadow: var(--primary-glow);
+}
+
+.gold-glow-hover {
+  transition: all 0.2s ease;
+}
+
+.gold-glow-hover:hover {
+  box-shadow: var(--primary-glow);
+  border-color: var(--border-gold);
 }
 
 /* Custom premium scrollbar */
@@ -85,18 +121,18 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
+  background: #D4D4D8;
   border-radius: 9999px;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: #27272A;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #A1A1AA;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #3F3F46;
 }

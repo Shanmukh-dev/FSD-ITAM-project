@@ -45,21 +45,29 @@ export const TechnicianDashboard = () => {
   if (error) return <ErrorState message={error} onRetry={fetchData} />;
   if (!data) return null;
 
+  const assignedToMe = Number(data.assignedToMe || 0);
+  const inProgress = Number(data.inProgress || 0);
+  const completed = Number(data.completedThisMonth || 0);
+  const pendingTriage = Number(data.pendingTriage || 0);
+  const totalWorkload = assignedToMe + inProgress + completed;
+  const resolutionRate = totalWorkload > 0 ? Math.round((completed / totalWorkload) * 100) : 100;
+  const activeQueuePct = totalWorkload > 0 ? Math.round(((assignedToMe + inProgress) / totalWorkload) * 100) : 0;
+
   return (
     <div className="space-y-6">
       {/* Workbench Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
-            <span className="text-[11px] font-semibold tracking-wide text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 px-2.5 py-0.5 rounded-full flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+            <span className="text-[11px] font-semibold tracking-wide text-[#996E1D] dark:text-[#F1CB8D] bg-[#B88728]/10 dark:bg-[#F1CB8D]/15 border border-[#B88728]/25 dark:border-[#F1CB8D]/30 px-2.5 py-0.5 rounded-full flex items-center gap-1.5 shadow-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#B88728] dark:bg-[#F1CB8D] animate-pulse" />
               Technician Active
             </span>
           </div>
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">
             Technician Dashboard
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+          <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
             View assigned repairs, track progress, and log service resolutions.
           </p>
         </div>
@@ -72,58 +80,121 @@ export const TechnicianDashboard = () => {
         </Link>
       </div>
 
-      {/* Metric Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard
-          title="Awaiting Tech"
-          value={data.pendingTriage}
-          subtitle="Unassigned tickets"
-          icon={Clock}
-          color="primary"
-        />
-        <StatCard
-          title="Assigned to You"
-          value={data.assignedToMe}
-          subtitle="Tickets in your queue"
-          icon={Wrench}
-          color="emerald"
-        />
-        <StatCard
-          title="In Progress"
-          value={data.inProgress}
-          subtitle="Currently being repaired"
-          icon={Clock}
-          color="amber"
-        />
-        <StatCard
-          title="Completed This Month"
-          value={data.completedThisMonth}
-          subtitle="Repaired and back in service"
-          icon={CheckCircle2}
-          color="emerald"
-        />
+      {/* Top Asymmetrical Bento Hero: Service Readiness & Stacked Sparklines */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        {/* Service Readiness Hero Card (7 Cols) */}
+        <div className="lg:col-span-7 bg-white/80 dark:bg-[#0E0E12]/85 backdrop-blur-2xl border border-black/[0.06] dark:border-white/[0.08] rounded-3xl p-6 shadow-bento relative overflow-hidden flex flex-col justify-between group">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#B88728]/10 dark:bg-[#F1CB8D]/10 rounded-full blur-3xl pointer-events-none group-hover:scale-110 transition-transform duration-700" />
+
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#996E1D] dark:text-[#F1CB8D] bg-[#B88728]/10 dark:bg-[#F1CB8D]/15 border border-[#B88728]/25 dark:border-[#F1CB8D]/30 px-2.5 py-0.5 rounded-full flex items-center gap-1.5 shadow-xs">
+                  <Wrench size={12} />
+                  Workbench Service Velocity
+                </span>
+              </div>
+              <span className="text-xs font-mono text-zinc-400">
+                Active Shift
+              </span>
+            </div>
+
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mt-2">
+              <div>
+                <span className="text-xs text-zinc-500 dark:text-zinc-400 font-medium">Monthly Ticket Resolution Rate</span>
+                <div className="text-4xl sm:text-5xl font-black text-zinc-900 dark:text-white tracking-tight tabular-nums mt-1 flex items-baseline gap-2.5">
+                  <span>{resolutionRate}%</span>
+                  <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 font-sans tracking-normal bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md">
+                    {completed} Restored
+                  </span>
+                </div>
+              </div>
+              <div className="text-left sm:text-right text-xs text-zinc-500 dark:text-zinc-400">
+                <span className="font-bold text-zinc-900 dark:text-white">{assignedToMe + inProgress}</span> open tickets in your direct pipeline
+              </div>
+            </div>
+
+            {/* Workload Progress Bar */}
+            <div className="mt-6 space-y-2">
+              <div className="w-full h-3 rounded-full bg-zinc-100 dark:bg-zinc-800/80 overflow-hidden flex border border-black/[0.04] dark:border-white/5">
+                <div
+                  style={{ width: `${resolutionRate}%` }}
+                  className="h-full bg-emerald-500 transition-all duration-500"
+                  title={`Resolved: ${resolutionRate}%`}
+                />
+                <div
+                  style={{ width: `${activeQueuePct}%` }}
+                  className="h-full bg-gradient-to-r from-[#B88728] to-[#996E1D] dark:from-[#F1CB8D] dark:to-[#C89C57] transition-all duration-500"
+                  title={`Active Queue: ${activeQueuePct}%`}
+                />
+              </div>
+              <div className="flex items-center justify-between text-[11px] text-zinc-500 dark:text-zinc-400 pt-1">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span>Resolved This Month ({completed})</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#B88728] dark:bg-[#F1CB8D]" />
+                  <span>In Queue ({assignedToMe + inProgress})</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Stacked Sparklines Deck (5 Cols) */}
+        <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <StatCard
+            title="Awaiting Tech"
+            value={pendingTriage}
+            subtitle="Unassigned pool"
+            icon={Clock}
+            color="primary"
+          />
+          <StatCard
+            title="Assigned to You"
+            value={assignedToMe}
+            subtitle="Your direct tickets"
+            icon={Wrench}
+            color="emerald"
+          />
+          <StatCard
+            title="In Progress"
+            value={inProgress}
+            subtitle="Under active repair"
+            icon={Clock}
+            color="warning"
+          />
+          <StatCard
+            title="Resolved"
+            value={completed}
+            subtitle="Back in service"
+            icon={CheckCircle2}
+            color="emerald"
+          />
+        </div>
       </div>
 
       {/* Assigned Tickets Workbench */}
-      <Card>
+      <Card hover>
         <CardHeader
           title="My Assigned Repairs"
           subtitle="Equipment currently assigned to you for repair"
           action={
-            <Link to="/maintenance" className="text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium transition-colors">
-              All tickets
+            <Link to="/maintenance" className="text-xs text-[#996E1D] dark:text-[#F1CB8D] hover:underline font-semibold transition-colors">
+              All tickets →
             </Link>
           }
         />
 
         {(!data.assignedTickets || data.assignedTickets.length === 0) ? (
-          <p className="text-xs text-slate-400 py-6 text-center">
+          <p className="text-xs text-zinc-400 py-6 text-center">
             No repair tickets assigned to you right now.
           </p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-slate-50 dark:bg-[#0B0F19]/80 border-b border-slate-200 dark:border-white/[0.08] text-slate-500 dark:text-slate-400 uppercase text-[11px]">
+              <thead className="bg-black/[0.02] dark:bg-black/40 border-b border-black/[0.06] dark:border-white/[0.08] text-zinc-500 dark:text-zinc-400 uppercase text-[11px]">
                 <tr>
                   <th className="py-2.5 px-3">Asset</th>
                   <th className="py-2.5 px-3">Reported Issue</th>
@@ -133,16 +204,16 @@ export const TechnicianDashboard = () => {
                   <th className="py-2.5 px-3 text-right">Action</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-white/5">
+              <tbody className="divide-y divide-black/[0.04] dark:divide-white/5">
                 {data.assignedTickets.map((t) => (
-                  <tr key={t._id} className="hover:bg-slate-50 dark:hover:bg-white/[0.02] transition-colors">
+                  <tr key={t._id} className="hover:bg-black/[0.02] dark:hover:bg-white/[0.02] transition-colors">
                     <td className="py-3 px-3">
-                      <div className="font-semibold text-slate-900 dark:text-white">{t.asset?.name}</div>
-                      <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                      <div className="font-semibold text-zinc-900 dark:text-white">{t.asset?.name}</div>
+                      <div className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400">
                         {t.asset?.assetTag}
                       </div>
                     </td>
-                    <td className="py-3 px-3 text-slate-600 dark:text-slate-300 max-w-xs truncate">
+                    <td className="py-3 px-3 text-zinc-600 dark:text-zinc-300 max-w-xs truncate">
                       {t.description}
                     </td>
                     <td className="py-3 px-3">
@@ -163,7 +234,7 @@ export const TechnicianDashboard = () => {
                       <Badge
                         variant={
                           t.status === 'COMPLETED'
-                            ? 'success'
+                            ? 'gold'
                             : t.status === 'IN_PROGRESS'
                             ? 'info'
                             : 'warning'
@@ -173,7 +244,7 @@ export const TechnicianDashboard = () => {
                         {t.status}
                       </Badge>
                     </td>
-                    <td className="py-3 px-3 text-slate-500 dark:text-slate-400 text-[11px] tabular-nums">
+                    <td className="py-3 px-3 text-zinc-500 dark:text-zinc-400 text-[11px] tabular-nums">
                       {formatDateTime(t.createdAt)}
                     </td>
                     <td className="py-3 px-3 text-right">

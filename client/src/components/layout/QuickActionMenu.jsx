@@ -61,7 +61,7 @@ export const QuickActionMenu = () => {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm transition-all active:scale-95 cursor-pointer"
+        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-[#B88728] hover:bg-[#996E1D] dark:bg-[#F1CB8D] dark:hover:bg-[#F8E0B9] text-white dark:text-[#09090B] shadow-xs dark:shadow-[0_0_15px_-2px_rgba(241,203,141,0.25)] transition-all active:scale-95 cursor-pointer"
         title="Quick Actions"
       >
         <Plus size={15} />
@@ -70,7 +70,7 @@ export const QuickActionMenu = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl overflow-hidden z-50 animate-in fade-in zoom-in-95 duration-100">
+        <div className="absolute right-0 mt-2 w-56 bg-white/95 dark:bg-[#121216]/95 backdrop-blur-xl border border-black/[0.08] dark:border-white/10 rounded-2xl shadow-xl overflow-hidden z-50 animate-in fade-in zoom-in-95 duration-100">
           <div className="p-1.5 space-y-0.5">
             {actions.map((act) => {
               const Icon = act.icon;
@@ -79,16 +79,16 @@ export const QuickActionMenu = () => {
                   key={act.label}
                   type="button"
                   onClick={() => handleSelect(act.to)}
-                  className="w-full flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-left text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-colors cursor-pointer group"
+                  className="w-full flex items-center gap-2.5 px-2.5 py-2 rounded-xl text-left text-xs font-medium text-zinc-700 dark:text-zinc-200 hover:bg-black/[0.04] dark:hover:bg-white/[0.06] transition-colors cursor-pointer group"
                 >
-                  <div className="p-1.5 rounded-md bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 group-hover:scale-105 transition-transform">
+                  <div className="p-1.5 rounded-lg bg-[#B88728]/10 dark:bg-[#F1CB8D]/15 text-[#996E1D] dark:text-[#F1CB8D] group-hover:scale-105 transition-transform">
                     <Icon size={14} />
                   </div>
                   <div>
-                    <div className="font-semibold text-slate-900 dark:text-white leading-tight">
+                    <div className="font-semibold text-zinc-900 dark:text-white leading-tight">
                       {act.label}
                     </div>
-                    <div className="text-[10px] text-slate-400 leading-tight">
+                    <div className="text-[10px] text-zinc-400 dark:text-zinc-500 leading-tight">
                       {act.description}
                     </div>
                   </div>

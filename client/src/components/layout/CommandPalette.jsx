@@ -201,10 +201,10 @@ export const CommandPalette = ({ isOpen, onClose }) => {
       />
 
       {/* Palette Modal */}
-      <div className="relative w-full max-w-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden z-10 animate-in fade-in zoom-in-95 duration-150">
+      <div className="relative w-full max-w-xl bg-white/95 dark:bg-[#121216]/95 backdrop-blur-2xl border border-black/[0.08] dark:border-white/10 rounded-3xl shadow-2xl overflow-hidden z-10 animate-in fade-in zoom-in-95 duration-150">
         {/* Search Input Box */}
-        <div className="flex items-center gap-3 px-4 py-3.5 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/40">
-          <Search size={18} className="text-slate-400 shrink-0" />
+        <div className="flex items-center gap-3 px-4 py-3.5 border-b border-black/[0.06] dark:border-white/10 bg-black/[0.02] dark:bg-black/30">
+          <Search size={18} className="text-zinc-400 shrink-0" />
           <input
             ref={inputRef}
             type="text"
@@ -215,9 +215,9 @@ export const CommandPalette = ({ isOpen, onClose }) => {
             }}
             onKeyDown={handleKeyDown}
             placeholder="Search pages, actions, or jump anywhere..."
-            className="w-full bg-transparent text-slate-900 dark:text-slate-100 text-sm outline-none placeholder-slate-400"
+            className="w-full bg-transparent text-zinc-900 dark:text-zinc-100 text-sm outline-none placeholder-zinc-400"
           />
-          <kbd className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-semibold text-slate-400 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded shadow-xs">
+          <kbd className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-semibold text-zinc-400 bg-black/[0.04] dark:bg-white/[0.06] border border-black/[0.06] dark:border-white/10 rounded-md shadow-xs">
             ESC
           </kbd>
         </div>
@@ -225,7 +225,7 @@ export const CommandPalette = ({ isOpen, onClose }) => {
         {/* Results List */}
         <div className="max-h-80 overflow-y-auto p-2 space-y-1">
           {filtered.length === 0 ? (
-            <div className="py-10 text-center text-xs text-slate-400">
+            <div className="py-10 text-center text-xs text-zinc-400">
               No matching pages or actions found.
             </div>
           ) : (
@@ -237,24 +237,24 @@ export const CommandPalette = ({ isOpen, onClose }) => {
                   key={item.id}
                   onClick={() => handleSelect(item)}
                   onMouseEnter={() => setSelectedIndex(idx)}
-                  className={`flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-medium cursor-pointer transition-colors ${
+                  className={`flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-medium cursor-pointer transition-colors ${
                     isSelected
-                      ? 'bg-indigo-50 dark:bg-indigo-500/15 text-indigo-700 dark:text-indigo-300'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/60'
+                      ? 'bg-[#B88728]/12 dark:bg-[#F1CB8D]/15 text-[#996E1D] dark:text-[#F1CB8D] border-l-2 border-[#B88728] dark:border-[#F1CB8D]'
+                      : 'text-zinc-700 dark:text-zinc-300 hover:bg-black/[0.03] dark:hover:bg-white/[0.05]'
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <Icon
                       size={16}
-                      className={isSelected ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-400'}
+                      className={isSelected ? 'text-[#996E1D] dark:text-[#F1CB8D]' : 'text-zinc-400'}
                     />
                     <span>{item.title}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-400">
+                    <span className="text-[10px] px-1.5 py-0.5 rounded-md bg-black/[0.04] dark:bg-white/[0.06] text-zinc-400">
                       {item.section}
                     </span>
-                    {isSelected && <ArrowRight size={13} className="text-indigo-500" />}
+                    {isSelected && <ArrowRight size={13} className="text-[#996E1D] dark:text-[#F1CB8D]" />}
                   </div>
                 </div>
               );
@@ -263,15 +263,15 @@ export const CommandPalette = ({ isOpen, onClose }) => {
         </div>
 
         {/* Footer shortcuts */}
-        <div className="flex items-center justify-between px-4 py-2 border-t border-slate-100 dark:border-slate-800/80 bg-slate-50 dark:bg-slate-950/60 text-[11px] text-slate-400">
+        <div className="flex items-center justify-between px-4 py-2 border-t border-black/[0.06] dark:border-white/10 bg-black/[0.02] dark:bg-black/30 text-[11px] text-zinc-400">
           <div className="flex items-center gap-2">
             <span>Navigation:</span>
-            <kbd className="px-1 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">↑</kbd>
-            <kbd className="px-1 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">↓</kbd>
-            <kbd className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">↵</kbd>
+            <kbd className="px-1 py-0.5 rounded bg-white dark:bg-zinc-800 border border-black/[0.08] dark:border-zinc-700">↑</kbd>
+            <kbd className="px-1 py-0.5 rounded bg-white dark:bg-zinc-800 border border-black/[0.08] dark:border-zinc-700">↓</kbd>
+            <kbd className="px-1.5 py-0.5 rounded bg-white dark:bg-zinc-800 border border-black/[0.08] dark:border-zinc-700">↵</kbd>
           </div>
-          <span className="flex items-center gap-1">
-            <Sparkles size={11} className="text-indigo-500" />
+          <span className="flex items-center gap-1 text-[#996E1D] dark:text-[#F1CB8D]">
+            <Sparkles size={11} />
             Quick Navigation
           </span>
         </div>

@@ -31,21 +31,21 @@ export const Modal = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-slate-900/60 dark:bg-black/80 backdrop-blur-sm transition-opacity animate-in fade-in duration-200"
+        className="fixed inset-0 bg-black/70 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
         onClick={onClose}
       />
 
       {/* Modal Dialog */}
       <div
-        className={`relative w-full ${maxWidth} bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl p-6 overflow-hidden z-10 animate-in fade-in zoom-in-95 duration-150 text-slate-900 dark:text-slate-100`}
+        className={`relative w-full ${maxWidth} bg-white/95 dark:bg-[#121216]/95 backdrop-blur-2xl border border-black/[0.08] dark:border-white/10 rounded-3xl shadow-2xl p-6 sm:p-7 overflow-hidden z-10 animate-in fade-in zoom-in-95 duration-150 text-zinc-900 dark:text-zinc-100`}
       >
-        <div className="flex items-start justify-between pb-4 border-b border-slate-100 dark:border-slate-800 mb-5">
+        <div className="flex items-start justify-between pb-4 border-b border-black/[0.06] dark:border-white/10 mb-5">
           <div>
-            <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white tracking-tight">
+            <h3 className="text-base sm:text-lg font-bold text-zinc-900 dark:text-white tracking-tight">
               {title}
             </h3>
             {subtitle && (
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">
+              <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 leading-relaxed">
                 {subtitle}
               </p>
             )}
@@ -53,7 +53,7 @@ export const Modal = ({
           <button
             type="button"
             onClick={onClose}
-            className="text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+            className="text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 p-1.5 rounded-xl hover:bg-black/[0.04] dark:hover:bg-white/[0.06] transition-colors cursor-pointer"
           >
             <X size={18} />
           </button>

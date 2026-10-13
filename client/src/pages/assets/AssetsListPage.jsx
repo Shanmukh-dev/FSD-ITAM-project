@@ -30,6 +30,7 @@ import LoadingSkeleton from '../../components/shared/LoadingSkeleton';
 import EmptyState from '../../components/shared/EmptyState';
 import ErrorState from '../../components/shared/ErrorState';
 import AssetStatusBadge from '../../components/assets/AssetStatusBadge';
+import AssetInspectorDrawer from '../../components/assets/AssetInspectorDrawer';
 import {
   ROLES,
   ASSET_TYPES,
@@ -161,10 +162,10 @@ export const AssetsListPage = () => {
             setAssetType('');
             setPage(1);
           }}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-colors cursor-pointer ${
             assetType === ''
-              ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-400 font-semibold'
-              : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+              ? 'bg-[#B88728]/12 text-[#996E1D] dark:bg-[#F1CB8D]/15 dark:text-[#F1CB8D] font-semibold shadow-xs'
+              : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-black/[0.04] dark:hover:bg-white/[0.05]'
           }`}
         >
           <Layers size={14} />
@@ -176,10 +177,10 @@ export const AssetsListPage = () => {
             setAssetType(ASSET_TYPES.PHYSICAL);
             setPage(1);
           }}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-colors cursor-pointer ${
             assetType === ASSET_TYPES.PHYSICAL
-              ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-400 font-semibold'
-              : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+              ? 'bg-[#B88728]/12 text-[#996E1D] dark:bg-[#F1CB8D]/15 dark:text-[#F1CB8D] font-semibold shadow-xs'
+              : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-black/[0.04] dark:hover:bg-white/[0.05]'
           }`}
         >
           <Monitor size={14} />
@@ -191,10 +192,10 @@ export const AssetsListPage = () => {
             setAssetType(ASSET_TYPES.DIGITAL);
             setPage(1);
           }}
-          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition-colors cursor-pointer ${
             assetType === ASSET_TYPES.DIGITAL
-              ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-400 font-semibold'
-              : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+              ? 'bg-[#B88728]/12 text-[#996E1D] dark:bg-[#F1CB8D]/15 dark:text-[#F1CB8D] font-semibold shadow-xs'
+              : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-black/[0.04] dark:hover:bg-white/[0.05]'
           }`}
         >
           <KeyRound size={14} />
@@ -214,16 +215,16 @@ export const AssetsListPage = () => {
                   setStatus(f.value);
                   setPage(1);
                 }}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all shrink-0 cursor-pointer flex items-center gap-1.5 ${
+                className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all shrink-0 cursor-pointer flex items-center gap-1.5 ${
                   isActive
-                    ? 'bg-indigo-600 text-white shadow-xs font-semibold'
-                    : 'bg-white hover:bg-slate-50 border border-slate-200/80 text-slate-700 dark:bg-slate-800/80 dark:hover:bg-slate-800 dark:border-white/10 dark:text-slate-300'
+                    ? 'bg-[#B88728] text-white dark:bg-[#F1CB8D] dark:text-[#09090B] shadow-xs dark:shadow-[0_0_12px_rgba(241,203,141,0.25)] font-semibold'
+                    : 'bg-white/80 hover:bg-black/[0.02] border border-black/[0.08] text-zinc-700 dark:bg-[#121216]/80 dark:hover:bg-white/[0.04] dark:border-white/10 dark:text-zinc-300'
                 }`}
               >
                 {f.color && f.color !== 'muted' && (
                   <span
                     className={`w-1.5 h-1.5 rounded-full ${
-                      isActive ? 'bg-white' : f.color === 'emerald' ? 'bg-emerald-500' : f.color === 'warning' ? 'bg-amber-500' : 'bg-indigo-500'
+                      isActive ? 'bg-white dark:bg-[#09090B]' : 'bg-[#B88728] dark:bg-[#F1CB8D]'
                     }`}
                   />
                 )}
@@ -370,13 +371,15 @@ export const AssetsListPage = () => {
                   <tr
                     key={asset._id}
                     onClick={() => setSelectedAsset(asset)}
-                    className={`hover:bg-slate-50 dark:hover:bg-white/[0.03] transition-colors cursor-pointer ${
-                      selectedAsset?._id === asset._id ? 'bg-indigo-50/70 dark:bg-indigo-500/[0.08]' : ''
+                    className={`hover:bg-black/[0.03] dark:hover:bg-white/[0.04] transition-colors cursor-pointer ${
+                      selectedAsset?._id === asset._id
+                        ? 'bg-[#B88728]/10 dark:bg-[#F1CB8D]/15 shadow-xs'
+                        : ''
                     }`}
                   >
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-1.5">
-                        <span className="font-mono font-bold text-indigo-600 dark:text-indigo-400">
+                        <span className="font-mono font-bold text-[#996E1D] dark:text-[#F1CB8D]">
                           {asset.assetTag}
                         </span>
                         {asset.assetType === ASSET_TYPES.DIGITAL ? (
@@ -509,172 +512,10 @@ export const AssetsListPage = () => {
 
       {/* Slide-Over Quick Inspection Drawer (Instant View without leaving page) */}
       {selectedAsset && (
-        <div className="fixed inset-0 z-50 flex justify-end">
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 bg-slate-900/60 dark:bg-[#070A12]/70 backdrop-blur-xs transition-opacity"
-            onClick={() => setSelectedAsset(null)}
-          />
-
-          {/* Drawer Panel */}
-          <div className="relative w-full max-w-md bg-white dark:bg-[#111827] border-l border-slate-200 dark:border-slate-800 shadow-2xl h-full flex flex-col justify-between z-10 animate-in slide-in-from-right duration-200">
-            {/* Drawer Header */}
-            <div className="p-5 border-b border-slate-100 dark:border-white/[0.08] flex items-start justify-between bg-slate-50/70 dark:bg-[#0B0F19]/60">
-              <div>
-                <div className="flex items-center gap-2 mb-1.5">
-                  <span className="font-mono text-xs font-bold text-indigo-700 dark:text-indigo-400 px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/25">
-                    {selectedAsset.assetTag}
-                  </span>
-                  <AssetStatusBadge status={selectedAsset.status} size="sm" />
-                </div>
-                <h2 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight">
-                  {selectedAsset.name}
-                </h2>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                  {selectedAsset.brand} {selectedAsset.model}
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => setSelectedAsset(null)}
-                className="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-white rounded-lg hover:bg-slate-100 dark:hover:bg-white/[0.08] transition-colors cursor-pointer"
-              >
-                <X size={18} />
-              </button>
-            </div>
-
-            {/* Drawer Content */}
-            <div className="flex-1 overflow-y-auto p-5 space-y-5 text-xs">
-              {/* Specs Matrix */}
-              <div className="space-y-2.5">
-                <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                  {selectedAsset.assetType === ASSET_TYPES.DIGITAL ? 'Software & License Specs' : 'Device Details'}
-                </span>
-                <div className="bg-slate-50 dark:bg-[#070A12]/70 rounded-xl p-3.5 border border-slate-200/80 dark:border-white/5 space-y-2">
-                  <div className="flex justify-between">
-                    <span className="text-slate-500 dark:text-slate-400">Category:</span>
-                    <span className="text-slate-900 dark:text-white font-medium">{selectedAsset.category?.replace(/_/g, ' ')}</span>
-                  </div>
-                  {selectedAsset.assetType === ASSET_TYPES.DIGITAL ? (
-                    <>
-                      <div className="flex justify-between">
-                        <span className="text-slate-500 dark:text-slate-400">License Model:</span>
-                        <span className="text-slate-900 dark:text-white font-medium">{selectedAsset.digitalDetails?.licenseType || 'SUBSCRIPTION'}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-slate-500 dark:text-slate-400">Seat Capacity:</span>
-                        <span className="text-indigo-600 dark:text-indigo-400 font-semibold">
-                          {selectedAsset.digitalDetails?.seatsAllocated || 0} / {selectedAsset.digitalDetails?.seatsTotal || 1} Allocated
-                        </span>
-                      </div>
-                      {selectedAsset.digitalDetails?.validUntil && (
-                        <div className="flex justify-between">
-                          <span className="text-slate-500 dark:text-slate-400">Expires / Renews:</span>
-                          <span className="text-slate-900 dark:text-white font-medium">{formatDate(selectedAsset.digitalDetails.validUntil)}</span>
-                        </div>
-                      )}
-                      {selectedAsset.digitalDetails?.contractNumber && (
-                        <div className="flex justify-between">
-                          <span className="text-slate-500 dark:text-slate-400">Contract #:</span>
-                          <span className="font-mono text-slate-900 dark:text-white">{selectedAsset.digitalDetails.contractNumber}</span>
-                        </div>
-                      )}
-                      <div className="flex justify-between">
-                        <span className="text-slate-500 dark:text-slate-400">Environment:</span>
-                        <span className="text-slate-900 dark:text-white font-medium">{selectedAsset.location || 'Cloud / SaaS'}</span>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div className="flex justify-between">
-                        <span className="text-slate-500 dark:text-slate-400">Serial Number:</span>
-                        <span className="font-mono text-slate-900 dark:text-white font-semibold">#{selectedAsset.serialNumber}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-slate-500 dark:text-slate-400">Condition:</span>
-                        <span className="text-slate-900 dark:text-white font-medium">{selectedAsset.condition || 'Good'}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-slate-500 dark:text-slate-400">Location:</span>
-                        <span className="text-slate-900 dark:text-white font-medium">{selectedAsset.location || 'Depot Storage'}</span>
-                      </div>
-                    </>
-                  )}
-                </div>
-              </div>
-
-              {/* Custody Information */}
-              <div className="space-y-2.5">
-                <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                  {selectedAsset.assetType === ASSET_TYPES.DIGITAL ? 'Allocation & Custody' : 'Current Assignment'}
-                </span>
-                <div className="bg-slate-50 dark:bg-[#070A12]/70 rounded-xl p-3.5 border border-slate-200/80 dark:border-white/5 space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-500 dark:text-slate-400">
-                      {selectedAsset.assetType === ASSET_TYPES.DIGITAL && (selectedAsset.digitalDetails?.seatsTotal > 1) ? 'Assigned Staff:' : 'Assigned To:'}
-                    </span>
-                    <span className="text-slate-900 dark:text-white font-medium">
-                      {selectedAsset.assetType === ASSET_TYPES.DIGITAL && (selectedAsset.digitalDetails?.seatsTotal > 1)
-                        ? `${selectedAsset.digitalDetails?.seatsAllocated || 0} Staff Allocated`
-                        : selectedAsset.assignedTo ? selectedAsset.assignedTo.name : 'Not Assigned'}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-500 dark:text-slate-400">Department:</span>
-                    <span className="text-slate-900 dark:text-white font-medium">
-                      {selectedAsset.department?.name || 'Company-wide'}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Valuation & Depreciation */}
-              <div className="space-y-2.5">
-                <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                  Value & Depreciation
-                </span>
-                <div className="bg-slate-50 dark:bg-[#070A12]/70 rounded-xl p-3.5 border border-slate-200/80 dark:border-white/5 space-y-2">
-                  <div className="flex justify-between">
-                    <span className="text-slate-500 dark:text-slate-400">Current Value:</span>
-                    <span className="text-slate-900 dark:text-white font-bold tabular-nums">
-                      {formatCurrency(selectedAsset.depreciationAnalysis?.currentBookValue || selectedAsset.purchasePrice)}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-500 dark:text-slate-400">Purchase Price:</span>
-                    <span className="text-slate-500 dark:text-slate-400 tabular-nums">
-                      {formatCurrency(selectedAsset.purchasePrice)}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-500 dark:text-slate-400">Purchase Date:</span>
-                    <span className="text-slate-500 dark:text-slate-400">
-                      {formatDate(selectedAsset.purchaseDate)}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Drawer Footer Actions */}
-            <div className="p-4 border-t border-slate-100 dark:border-white/[0.08] bg-slate-50/70 dark:bg-[#0B0F19]/60 flex gap-2.5">
-              <Button
-                variant="secondary"
-                size="sm"
-                className="flex-1"
-                onClick={() => setSelectedAsset(null)}
-              >
-                Close
-              </Button>
-              <Link to={`/assets/${selectedAsset._id}`} className="flex-1">
-                <Button variant="primary" size="sm" className="w-full">
-                  <span>View Details</span>
-                  <ExternalLink size={13} />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
+        <AssetInspectorDrawer
+          asset={selectedAsset}
+          onClose={() => setSelectedAsset(null)}
+        />
       )}
     </div>
   );

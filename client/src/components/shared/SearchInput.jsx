@@ -35,7 +35,7 @@ export const SearchInput = ({
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder={placeholder}
-        className="w-full bg-white dark:bg-[#070A12]/90 border border-slate-300 dark:border-white/10 hover:border-slate-400 dark:hover:border-white/20 focus:border-indigo-600 dark:focus:border-indigo-500 text-slate-900 dark:text-slate-100 text-xs sm:text-sm rounded-lg pl-9 pr-8 py-2 placeholder-slate-400 dark:placeholder-slate-500 outline-none transition-all focus:ring-1 focus:ring-indigo-500/20"
+        className="w-full bg-white dark:bg-[#0E0E12] border border-black/[0.1] dark:border-white/10 hover:border-[#B88728]/40 dark:hover:border-[#F1CB8D]/40 focus:border-[#B88728] dark:focus:border-[#F1CB8D] text-zinc-900 dark:text-zinc-100 text-xs sm:text-sm rounded-xl pl-9 pr-8 py-2 placeholder-zinc-400 dark:placeholder-zinc-600 outline-none transition-all focus:ring-2 focus:ring-[#B88728]/20 dark:focus:ring-[#F1CB8D]/20 shadow-xs"
       />
       {searchTerm && (
         <button

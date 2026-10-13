@@ -25,15 +25,15 @@ const ACTION_ICONS = {
 };
 
 const ACTION_COLORS = {
-  CREATED: 'text-emerald-600 border-emerald-300 bg-emerald-50 dark:text-emerald dark:border-emerald/40 dark:bg-emerald/15',
-  ASSIGNED: 'text-indigo-600 border-indigo-300 bg-indigo-50 dark:text-primary dark:border-primary/40 dark:bg-primary/15',
-  RETURNED: 'text-sky-600 border-sky-300 bg-sky-50 dark:text-sky-400 dark:border-sky-400/40 dark:bg-sky-400/15',
-  TRANSFERRED: 'text-purple-600 border-purple-300 bg-purple-50 dark:text-purple-400 dark:border-purple-400/40 dark:bg-purple-400/15',
-  MAINTENANCE_STARTED: 'text-amber-600 border-amber-300 bg-amber-50 dark:text-amber-400 dark:border-amber/40 dark:bg-amber/15',
-  MAINTENANCE_COMPLETED: 'text-emerald-600 border-emerald-300 bg-emerald-50 dark:text-emerald dark:border-emerald/40 dark:bg-emerald/15',
-  STATUS_CHANGED: 'text-slate-700 border-slate-300 bg-slate-100 dark:text-white dark:border-white/20 dark:bg-white/10',
-  RETIRED: 'text-slate-500 border-slate-300 bg-slate-100 dark:text-gray-400 dark:border-gray-400/40 dark:bg-gray-400/15',
-  DISPOSED: 'text-rose-600 border-rose-300 bg-rose-50 dark:text-rose-400 dark:border-destructive/40 dark:bg-destructive/15',
+  CREATED: 'text-[#996E1D] border-[#B88728]/30 bg-[#B88728]/10 dark:text-[#F1CB8D] dark:border-[#F1CB8D]/40 dark:bg-[#F1CB8D]/15',
+  ASSIGNED: 'text-zinc-900 border-zinc-300 bg-zinc-100 dark:text-[#F8FAFC] dark:border-white/20 dark:bg-white/10',
+  RETURNED: 'text-zinc-700 border-zinc-200 bg-zinc-50 dark:text-zinc-300 dark:border-white/10 dark:bg-white/5',
+  TRANSFERRED: 'text-[#996E1D] border-[#B88728]/30 bg-[#B88728]/10 dark:text-[#F1CB8D] dark:border-[#F1CB8D]/40 dark:bg-[#F1CB8D]/15',
+  MAINTENANCE_STARTED: 'text-zinc-600 border-zinc-300 bg-zinc-100 dark:text-zinc-400 dark:border-white/15 dark:bg-white/5',
+  MAINTENANCE_COMPLETED: 'text-[#996E1D] border-[#B88728]/30 bg-[#B88728]/10 dark:text-[#F1CB8D] dark:border-[#F1CB8D]/40 dark:bg-[#F1CB8D]/15',
+  STATUS_CHANGED: 'text-zinc-700 border-zinc-300 bg-zinc-100 dark:text-zinc-200 dark:border-white/20 dark:bg-white/10',
+  RETIRED: 'text-zinc-500 border-zinc-200 bg-zinc-100 dark:text-zinc-500 dark:border-white/10 dark:bg-white/5',
+  DISPOSED: 'text-zinc-600 border-zinc-300 bg-zinc-200 dark:text-zinc-400 dark:border-white/20 dark:bg-white/10',
 };
 
 export const AssetTimeline = ({ history = [] }) => {
