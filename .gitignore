@@ -33,3 +33,21 @@ dist-ssr
 *.sw?
 
 ITAM_Review_1.pptx
+ITAM_Review_1.backup.pptx
+ITAM_Review_1_Redesigned.pptx
+ITAM_Review_1_Redesigned_v2.pptx
+CHANGELOG.md
+build_full_report.py
+build_report_chapter4.py
+build_report_chapter5.py
+build_report_chapter6_appendix_etc.py
+build_report_chapters1_3.py
+build_report_preliminary.py
+report_helpers.py
+generate_sequence_diagram.py
+
+FSD_Project_Report_S_Srisakthi_Final.docx
+FSD_Project_Report_T_S_Shanmukh_Vashtav_Final.docx
+FSD_Project_Report_T_S_Shanmukh_Vashtav_Final.pdf
+
+REFERENCE_DOCUMENT_FINAL_REVIEW.pdf
