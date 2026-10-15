@@ -1,64 +1,64 @@
 {
-  "timestamp": "2026-10-09T06:53:03.789Z",
-  "durationSeconds": 82.15,
+  "timestamp": "2026-10-15T17:47:33.468Z",
+  "durationSeconds": 76.64,
   "success": true,
   "testSteps": [
     {
       "name": "01_Admin_Authentication",
       "status": "PASSED",
-      "timestamp": "2026-10-09T06:51:49.628Z",
+      "timestamp": "2026-10-15T17:46:24.998Z",
       "note": "Admin signed in successfully"
     },
     {
       "name": "02_Dashboard_Metrics_View",
       "status": "PASSED",
-      "timestamp": "2026-10-09T06:51:51.510Z",
+      "timestamp": "2026-10-15T17:46:26.517Z",
       "header": "Admin Dashboard",
-      "statCardsCount": 71
+      "statCardsCount": 50
     },
     {
       "name": "03_Departments_Management",
       "status": "PASSED",
-      "timestamp": "2026-10-09T06:52:08.210Z",
-      "createdDepartment": "Core Platform Infrastructure 1791528702747"
+      "timestamp": "2026-10-15T17:46:41.212Z",
+      "createdDepartment": "Core Platform Infrastructure 1792086378047"
     },
     {
       "name": "04_Staff_Directory_Interaction",
       "status": "PASSED",
-      "timestamp": "2026-10-09T06:52:23.826Z",
-      "provisionedEmail": "e2e_staff_1791528702747@enterprise.corp"
+      "timestamp": "2026-10-15T17:46:56.456Z",
+      "provisionedEmail": "e2e_staff_1792086378047@enterprise.corp"
     },
     {
       "name": "05_Asset_Registration",
       "status": "PASSED",
-      "timestamp": "2026-10-09T06:52:39.643Z",
-      "registeredAssetTag": "PUP-702747"
+      "timestamp": "2026-10-15T17:47:12.186Z",
+      "registeredAssetTag": "PUP-378047"
     },
     {
       "name": "06_Asset_Detail_And_Depreciation",
       "status": "PASSED",
-      "timestamp": "2026-10-09T06:52:39.805Z",
-      "currentUrl": "http://localhost:5173/assets/6ac88f36c187fc84f6bc334d"
+      "timestamp": "2026-10-15T17:47:12.358Z",
+      "currentUrl": "http://localhost:5173/assets/6ad1119e697f4611ecd4a27e"
     },
     {
       "name": "07_Asset_Requisitions_Flow",
       "status": "PASSED",
-      "timestamp": "2026-10-09T06:52:54.760Z"
+      "timestamp": "2026-10-15T17:47:24.979Z"
     },
     {
       "name": "08_Maintenance_Queue_View",
       "status": "PASSED",
-      "timestamp": "2026-10-09T06:52:56.119Z"
+      "timestamp": "2026-10-15T17:47:26.225Z"
     },
     {
       "name": "09_Executive_Reports_Visualization",
       "status": "PASSED",
-      "timestamp": "2026-10-09T06:52:58.949Z"
+      "timestamp": "2026-10-15T17:47:29.025Z"
     },
     {
       "name": "10_Profile_And_Notifications_Dropdown",
       "status": "PASSED",
-      "timestamp": "2026-10-09T06:53:02.717Z"
+      "timestamp": "2026-10-15T17:47:32.670Z"
     }
   ],
   "consoleLogs": [],
@@ -74,7 +74,12 @@
     "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\08_maintenance.png",
     "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\09_reports.png",
     "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\10_profile_and_notifications.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\admin_dashboard_walkthrough.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\asset_manager_dashboard_walkthrough.png",
     "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\audit",
-    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\failure_screenshot.png"
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\employee_dashboard_walkthrough.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\failure_screenshot.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\technician_dashboard_walkthrough.png",
+    "C:\\TSSV\\Group Presentation\\3rd Year\\Sem 5\\FSD\\Project\\tests\\reports\\screenshots\\walkthrough_admin_dashboard.png"
   ]
 }

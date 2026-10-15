@@ -1,11 +1,24 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+try {
+  process.loadEnvFile(path.resolve(__dirname, '../../server/.env'));
+} catch {
+  // Ignored if environment is already populated
+}
 
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/itam';
 
 export async function ensureTestAdmin() {
   try {
-    const conn = await mongoose.connect(MONGO_URI);
+    const conn = await mongoose.connect(MONGO_URI, {
+      serverSelectionTimeoutMS: 15000,
+    });
     const usersCol = conn.connection.db.collection('users');
 
     const email = 'admin@enterprise.corp';

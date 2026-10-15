@@ -9,7 +9,14 @@ const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/itam';
+const MONGO_URI = process.env.MONGO_URI;
+
+if (!MONGO_URI) {
+  console.error('[Error] MONGO_URI is not configured in server/.env');
+  process.exit(1);
+}
+
+const maskUri = (uri) => uri ? uri.replace(/\/\/(.*?):(.*?)@/, '//$1:*****@') : '';
 
 // 5 Administrators
 const ADMINS = [
@@ -189,8 +196,10 @@ const STANDARD_DEPARTMENTS = [
 ];
 
 async function seedUserProfiles() {
-  console.log('Connecting to database:', MONGO_URI);
-  await mongoose.connect(MONGO_URI);
+  console.log('Connecting to database:', maskUri(MONGO_URI));
+  await mongoose.connect(MONGO_URI, {
+    serverSelectionTimeoutMS: 15000,
+  });
   const db = mongoose.connection.db;
 
   const usersCol = db.collection('users');
