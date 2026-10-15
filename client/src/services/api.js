@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+// Normalize backend API base URL (defaults to production Render backend)
+const rawApiUrl = import.meta.env.VITE_API_URL || 'https://fsd-itam-project.onrender.com/api';
+const baseURL = rawApiUrl.endsWith('/api')
+  ? rawApiUrl
+  : `${rawApiUrl.replace(/\/+$/, '')}/api`;
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL,
   headers: {
     'Content-Type': 'application/json',
   },
