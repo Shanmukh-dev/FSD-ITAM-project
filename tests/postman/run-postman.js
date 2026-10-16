@@ -18,43 +18,48 @@ if (!fs.existsSync(REPORTS_DIR)) {
   fs.mkdirSync(REPORTS_DIR, { recursive: true });
 }
 
+const getApiUrl = () => {
+  const clientEnvPath = path.resolve(__dirname, '../../client/.env');
+  if (fs.existsSync(clientEnvPath)) {
+    const envContent = fs.readFileSync(clientEnvPath, 'utf8');
+    const match = envContent.match(/VITE_API_URL=(.+)/);
+    if (match) return match[1].trim();
+  }
+  return process.env.VITE_API_URL || 'http://localhost:5000/api';
+};
+
 // Function to check if backend server is responsive
-const checkServerHealth = () => {
-  return new Promise((resolve) => {
-    const req = http.get('http://localhost:5000/api/health', (res) => {
-      let data = '';
-      res.on('data', (chunk) => { data += chunk; });
-      res.on('end', () => {
-        resolve(res.statusCode === 200);
-      });
-    });
-    req.on('error', () => {
-      resolve(false);
-    });
-    req.setTimeout(2500, () => {
-      req.destroy();
-      resolve(false);
-    });
-  });
+const checkServerHealth = async (apiUrl) => {
+  try {
+    const healthUrl = apiUrl.endsWith('/api') ? `${apiUrl.slice(0, -4)}/api/health` : `${apiUrl}/health`;
+    const res = await fetch(healthUrl, { signal: AbortSignal.timeout(8000) });
+    if (res.status < 500) return true;
+  } catch (e) {}
+  try {
+    const res2 = await fetch(apiUrl + '/auth/setup-status', { signal: AbortSignal.timeout(8000) });
+    return res2.status < 500;
+  } catch (e) {
+    return false;
+  }
 };
 
 async function main() {
+  const apiUrl = getApiUrl();
   console.log('='.repeat(70));
   console.log('   ITAM POSTMAN API REST TEST WORKFLOW');
   console.log('='.repeat(70));
-  console.log(`[Config] Target Base URL: http://localhost:5000/api`);
+  console.log(`[Config] Target Base URL: ${apiUrl}`);
   console.log(`[Config] Collection:      ${COLLECTION_PATH}`);
   console.log(`[Config] Environment:     ${ENVIRONMENT_PATH}`);
 
-  const isHealthy = await checkServerHealth();
+  const isHealthy = await checkServerHealth(apiUrl);
   if (!isHealthy) {
-    console.error('\n[Error] Backend server is not running or not responding at http://localhost:5000/api/health');
-    console.error('Please start the server first:');
-    console.error('  cd server && npm run dev\n');
+    console.error(`\n[Error] Backend server is not reachable at ${apiUrl}`);
+    console.error('Please verify backend connectivity.');
     process.exit(1);
   }
 
-  console.log('[Status] Backend API health check: ONLINE (200 OK)');
+  console.log(`[Status] Backend API health check: ONLINE (${apiUrl})`);
   await ensureTestAdmin();
   console.log('[Runner] Executing test suite via Newman...\n');
 
@@ -66,6 +71,7 @@ async function main() {
     {
       collection: COLLECTION_PATH,
       environment: ENVIRONMENT_PATH,
+      envVar: [{ key: 'baseUrl', value: apiUrl }],
       reporters: ['cli'],
       bail: false,
     },

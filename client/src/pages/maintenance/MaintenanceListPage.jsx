@@ -138,10 +138,10 @@ export const MaintenanceListPage = () => {
     setActionError(null);
     try {
       await api.post('/maintenance', {
-        assetId: reportAssetId,
+        asset: reportAssetId,
         issueType: reportIssueType,
         description: reportDesc,
-        priority: reportUrgency,
+        urgency: reportUrgency,
       });
       setReportModalOpen(false);
       setReportDesc('');

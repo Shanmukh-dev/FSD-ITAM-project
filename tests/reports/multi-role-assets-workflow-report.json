@@ -1,0 +1,234 @@
+{
+  "workflowName": "ITAM Multi-Role Asset Lifecycle, Assignment & Maintenance Workflow",
+  "timestamp": "2026-10-16T03:40:06.772Z",
+  "frontendUrl": "http://localhost:5173",
+  "backendApiUrl": "https://fsd-itam-project.onrender.com/api",
+  "totalSteps": 26,
+  "passedSteps": 26,
+  "failedSteps": 0,
+  "assetsCreated": [
+    {
+      "assetTag": "MBP-9172WKT-01",
+      "name": "Apple MacBook Pro 16\" M3 Max",
+      "category": "LAPTOP",
+      "purchasePrice": 3499,
+      "usefulLifeYears": 4,
+      "assignee": "aaron.paulson@enterprise.corp"
+    },
+    {
+      "assetTag": "MON-9172WKT-02",
+      "name": "Dell UltraSharp 32\" 4K Video Conferencing Monitor",
+      "category": "MONITOR",
+      "purchasePrice": 899,
+      "usefulLifeYears": 5,
+      "assignee": "employee@enterprise.corp"
+    },
+    {
+      "assetTag": "TP-9172WKT-03",
+      "name": "Lenovo ThinkPad P16 Gen 2 Mobile Workstation",
+      "category": "LAPTOP",
+      "purchasePrice": 2850,
+      "usefulLifeYears": 4,
+      "assignee": "aaron.paulson@enterprise.corp"
+    },
+    {
+      "assetTag": "CS-9172WKT-04",
+      "name": "Cisco Catalyst 9300 48-Port PoE+ Enterprise Switch",
+      "category": "NETWORKING",
+      "purchasePrice": 4850,
+      "usefulLifeYears": 6,
+      "assignee": null
+    },
+    {
+      "assetTag": "ACC-9172WKT-05",
+      "name": "Logitech MX Master 3S + Mechanical Wireless Combo",
+      "category": "PERIPHERAL",
+      "purchasePrice": 249,
+      "usefulLifeYears": 3,
+      "assignee": "employee@enterprise.corp"
+    },
+    {
+      "assetTag": "SW-JB-9172WKT",
+      "name": "JetBrains All Products Pack Team License",
+      "category": "SOFTWARE_LICENSE",
+      "purchasePrice": 7790,
+      "usefulLifeYears": 1,
+      "assignee": "aaron.paulson@enterprise.corp"
+    }
+  ],
+  "maintenanceTicketsReported": [
+    {
+      "id": "6ad19c66a1a7a53a99cbbf1b",
+      "assetTag": "MBP-9172WKT-01",
+      "urgency": "HIGH",
+      "description": "Screen displays horizontal flickering lines and artifacting under heavy GPU rendering loads in Figma and 3D CAD simulations."
+    },
+    {
+      "id": "6ad19c68a1a7a53a99cbbf41",
+      "assetTag": "TP-9172WKT-03",
+      "urgency": "CRITICAL",
+      "description": "Lithium battery swelling detected along lower chassis seam; trackpad click mechanism is physically jammed. Requires urgent bench safety inspection."
+    }
+  ],
+  "steps": [
+    {
+      "name": "Stage1_Manager_Login",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:37:33.273Z"
+    },
+    {
+      "name": "Stage1_CreateAsset_LAPTOP_MBP-9172WKT-01",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:37:41.356Z",
+      "assetId": "6ad19c08a1a7a53a99cbbdb6",
+      "purchasePrice": 3499
+    },
+    {
+      "name": "Stage1_AssignAsset_MBP-9172WKT-01",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:37:43.710Z",
+      "assignedTo": "aaron.paulson@enterprise.corp",
+      "assignmentId": "6ad19c0aa1a7a53a99cbbdc0"
+    },
+    {
+      "name": "Stage1_CreateAsset_MONITOR_MON-9172WKT-02",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:37:46.404Z",
+      "assetId": "6ad19c0da1a7a53a99cbbdce",
+      "purchasePrice": 899
+    },
+    {
+      "name": "Stage1_AssignAsset_MON-9172WKT-02",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:37:48.761Z",
+      "assignedTo": "employee@enterprise.corp",
+      "assignmentId": "6ad19c0fa1a7a53a99cbbddb"
+    },
+    {
+      "name": "Stage1_CreateAsset_LAPTOP_TP-9172WKT-03",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:37:51.462Z",
+      "assetId": "6ad19c12a1a7a53a99cbbdea",
+      "purchasePrice": 2850
+    },
+    {
+      "name": "Stage1_AssignAsset_TP-9172WKT-03",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:37:53.827Z",
+      "assignedTo": "aaron.paulson@enterprise.corp",
+      "assignmentId": "6ad19c14a1a7a53a99cbbdf4"
+    },
+    {
+      "name": "Stage1_CreateAsset_NETWORKING_CS-9172WKT-04",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:37:56.530Z",
+      "assetId": "6ad19c17a1a7a53a99cbbe02",
+      "purchasePrice": 4850
+    },
+    {
+      "name": "Stage1_CreateAsset_PERIPHERAL_ACC-9172WKT-05",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:37:59.213Z",
+      "assetId": "6ad19c1aa1a7a53a99cbbe0b",
+      "purchasePrice": 249
+    },
+    {
+      "name": "Stage1_AssignAsset_ACC-9172WKT-05",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:38:01.566Z",
+      "assignedTo": "employee@enterprise.corp",
+      "assignmentId": "6ad19c1ca1a7a53a99cbbe15"
+    },
+    {
+      "name": "Stage1_CreateAsset_SOFTWARE_LICENSE_SW-JB-9172WKT",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:38:04.345Z",
+      "assetId": "6ad19c1fa1a7a53a99cbbe27",
+      "purchasePrice": 7790
+    },
+    {
+      "name": "Stage1_AllocateSeat_SW-JB-9172WKT",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:38:06.002Z",
+      "targetUser": "aaron.paulson@enterprise.corp"
+    },
+    {
+      "name": "Stage1_Manager_View_Catalog",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:38:29.777Z"
+    },
+    {
+      "name": "Stage1_Manager_View_Asset_Detail",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:38:36.721Z"
+    },
+    {
+      "name": "Stage2_Employee_Login",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:38:50.696Z"
+    },
+    {
+      "name": "Stage2_Employee_View_Assigned_Assets",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:39:13.105Z"
+    },
+    {
+      "name": "Stage2_Report_Issue_MacBookPro",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:39:15.556Z",
+      "ticketId": "6ad19c66a1a7a53a99cbbf1b"
+    },
+    {
+      "name": "Stage2_Report_Issue_ThinkPad",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:39:17.962Z",
+      "ticketId": "6ad19c68a1a7a53a99cbbf41"
+    },
+    {
+      "name": "Stage2_Employee_View_Maintenance_Queue",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:39:20.834Z"
+    },
+    {
+      "name": "Stage3_Technician_Login",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:39:35.069Z"
+    },
+    {
+      "name": "Stage3_Technician_View_Bench",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:39:37.976Z"
+    },
+    {
+      "name": "Stage3_Technician_Start_Diagnostics",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:39:41.369Z",
+      "ticketId": "6ad19c68a1a7a53a99cbbf41"
+    },
+    {
+      "name": "Stage3_Technician_Complete_Repair",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:39:43.535Z",
+      "ticketId": "6ad19c68a1a7a53a99cbbf41",
+      "repairCost": 190,
+      "restoredStatus": "ASSIGNED"
+    },
+    {
+      "name": "Stage4_Admin_Login",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:39:59.586Z"
+    },
+    {
+      "name": "Stage4_Admin_View_Valuation_Reports",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:40:04.711Z"
+    },
+    {
+      "name": "Stage4_Verify_Asset_Audit_Ledger",
+      "status": "PASSED",
+      "timestamp": "2026-10-16T03:40:05.932Z",
+      "assetId": "6ad19c12a1a7a53a99cbbdea",
+      "historyEventsCount": 4
+    }
+  ]
+}

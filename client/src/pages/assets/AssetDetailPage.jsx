@@ -129,8 +129,9 @@ export const AssetDetailPage = () => {
     e.preventDefault();
     setModalLoading(true);
     try {
-      const res = await api.post(`/assets/${id}/assign`, {
-        employeeId: selectedEmployee,
+      const res = await api.post('/assignments', {
+        asset: id,
+        employee: selectedEmployee,
         expectedReturnDate: expectedReturnDate || null,
         notes: assignNotes,
       });
@@ -149,8 +150,9 @@ export const AssetDetailPage = () => {
     e.preventDefault();
     setModalLoading(true);
     try {
-      const res = await api.post(`/assets/${id}/return`, {
-        condition: returnCondition,
+      const assignmentId = asset?.activeAssignment?._id || id;
+      const res = await api.post(`/assignments/${assignmentId}/return`, {
+        returnCondition: returnCondition,
         notes: returnNotes,
       });
       if (res.data.success) {
@@ -168,7 +170,8 @@ export const AssetDetailPage = () => {
     e.preventDefault();
     setModalLoading(true);
     try {
-      const res = await api.post(`/assets/${id}/transfer`, {
+      const assignmentId = asset?.activeAssignment?._id || id;
+      const res = await api.post(`/assignments/${assignmentId}/transfer`, {
         newEmployeeId: selectedEmployee,
         reason: transferReason,
         expectedReturnDate: expectedReturnDate || null,
@@ -208,10 +211,10 @@ export const AssetDetailPage = () => {
     setModalLoading(true);
     try {
       const res = await api.post('/maintenance', {
-        assetId: id,
+        asset: id,
         issueType,
         description: issueDesc,
-        priority: issueUrgency,
+        urgency: issueUrgency,
       });
       if (res.data.success) {
         setReportModalOpen(false);

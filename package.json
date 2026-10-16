@@ -6,6 +6,7 @@
   "scripts": {
     "test:api": "node tests/postman/run-postman.js",
     "test:e2e": "node tests/e2e/run-e2e.js",
+    "test:workflow": "node tests/e2e/multi-role-assets-workflow.js",
     "test:all": "node tests/run-all-tests.js",
     "server": "npm --prefix server run dev",
     "client": "npm --prefix client run dev"

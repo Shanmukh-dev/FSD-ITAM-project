@@ -11,30 +11,23 @@ const __dirname = path.dirname(__filename);
 const REPORTS_DIR = path.join(__dirname, '..', 'reports');
 const REPORT_PATH = path.join(REPORTS_DIR, 'e2e-report.json');
 
-const checkUrl = (url) => {
-  return new Promise((resolve) => {
-    try {
-      const u = new URL(url);
-      const req = http.get(
-        {
-          hostname: u.hostname,
-          port: u.port,
-          path: u.pathname,
-          timeout: 3000,
-        },
-        (res) => {
-          resolve(res.statusCode < 500);
-        }
-      );
-      req.on('error', () => resolve(false));
-      req.on('timeout', () => {
-        req.destroy();
-        resolve(false);
-      });
-    } catch (e) {
-      resolve(false);
-    }
-  });
+const getApiUrl = () => {
+  const clientEnvPath = path.resolve(__dirname, '../../client/.env');
+  if (fs.existsSync(clientEnvPath)) {
+    const envContent = fs.readFileSync(clientEnvPath, 'utf8');
+    const match = envContent.match(/VITE_API_URL=(.+)/);
+    if (match) return match[1].trim();
+  }
+  return process.env.VITE_API_URL || 'http://localhost:5000/api';
+};
+
+const checkUrl = async (url) => {
+  try {
+    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+    return res.status < 500;
+  } catch (e) {
+    return false;
+  }
 };
 
 async function main() {
@@ -42,13 +35,14 @@ async function main() {
   console.log('   ITAM PUPPETEER FRONTEND E2E TEST WORKFLOW');
   console.log('='.repeat(70));
 
-  const isBackendUp = await checkUrl('http://localhost:5000/api/health');
+  const apiUrl = getApiUrl();
+  const apiHealthUrl = apiUrl.endsWith('/api') ? `${apiUrl.slice(0, -4)}/api/health` : `${apiUrl}/health`;
+  const isBackendUp = await checkUrl(apiHealthUrl) || await checkUrl(apiUrl + '/auth/setup-status');
   const isFrontendUp = await checkUrl('http://localhost:5173');
 
   if (!isBackendUp) {
-    console.error('\n[Error] Backend server is not running on http://localhost:5000');
-    console.error('Please start the backend before running frontend tests:');
-    console.error('  cd server && npm run dev\n');
+    console.error(`\n[Error] Backend server is not reachable at ${apiUrl}`);
+    console.error('Please verify backend connectivity.');
     process.exit(1);
   }
 
@@ -59,7 +53,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.log('[Status] Backend API:       ONLINE (http://localhost:5000)');
+  console.log(`[Status] Backend API:       ONLINE (${apiUrl})`);
   console.log('[Status] Frontend Client:   ONLINE (http://localhost:5173)');
   await ensureTestAdmin();
 
